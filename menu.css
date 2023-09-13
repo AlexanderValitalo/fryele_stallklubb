@@ -1,0 +1,60 @@
+/*CSS-fil för menyn*/
+.navbar {/*Hela menyblocket(diven)*/
+    overflow: hidden;/*Förhindrar oönskad horizontell skrollning och extra vita områden om element hamnar utanför viewporten*/
+    background-color: #333333;
+}
+
+.navbar a {/*Hur hyperlänkarna ska vara som är direkt under menyn(Hem och Kontaktlänken)*/
+    float: left; /*Gör att elementen kommer efter varandra på en rad om de får plats, annars hoppar de ner en rad*/
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;/*Sätter padding till 14 pixlar åt toppen och botten och 16 pixlar åt vänster och höger*/
+    text-decoration: none;/*Tar bort understrukningen som en länk normalt har*/
+}
+
+.dropdown {/*Dropdown divens inställningar*/
+    float: left;/*Gör att elementen kommer efter varandra på en rad om de får plats, annars hoppar de ner en rad*/
+    overflow: hidden;
+}
+
+.dropdown .dropbutton {/*Dropdownknappens inställningar*/
+    font-size: 16px;
+    border: none;/*ingen kant*/
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;/*Ärver färgen av förälderelementet så det blir samma färg*/
+    font-family: inherit;/*Ärver fonten av föräldraelementet så det blir samma*/
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbutton {/*Vad som händer när man håller muspekaren över hyperlänkarna och dropdownknappen*/
+    background-color: red;
+}
+
+.dropdown-content {/*Ställer in diven i dropdownen*/
+    display: none;
+    position: absolute; /*Gör att dropdownalternativen hamnar direkt under helt själva*/
+    background-color: #f9f9f9;
+    min-width: 120px; /*Minsta bredden på dropdownmenyns divbox*/
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);/*Gör en liten lätt skugga jämte dropdownmenyn*/
+    z-index: 1;/*Gör att dropdownmenyn kommer framför(ovanpå) övriga element för de får ett större Z-värde(XY"Z" som i 3D-typ)*/
+}
+
+.dropdown-content a {/*Hur länkarna ska se ut i dropdownmenyn*/
+    float: none;/*Gör så att valen i dropsownmenyn kommer under varandra. Tas denna bort så läggs de horizontellt efter varandra*/
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none; /*Tar bort understykningen av texten*/
+    display: block; /*Gör att ett element tar upp hela raden i dropdownmenyn*/
+    text-align: left;
+}
+
+.dropdown-content a:hover {/*Vad som händer när man håller muspekaren på länkarna i dropdownmenyn*/
+    background-color: #dddddd;
+}
+
+.dropdown:hover .dropdown-content {/*Vad som ska hända med länkarna när man håller muspekaren på dropdownknappen*/
+    display: block; /*Ändrar så att dropdownmenyns alternativ syns*/
+}
